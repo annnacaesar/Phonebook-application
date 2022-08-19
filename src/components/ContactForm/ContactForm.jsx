@@ -43,19 +43,19 @@ const ContactForm = () => {
 					<InputContainer>
 						<label>
 							<Input type="text" name="name" />
-							Name
+							Ім'я
 							<Error component="div" name="name" />
 						</label>
 
 						<label>
 							<Input type="tel" name="number" />
-							Phone number
+							Номер телефону
 							<Error component="div" name="number" />
 						</label>
 					</InputContainer>
 
 					<ButtonSubmit type="submit" disabled={isLoading}>
-						ADD CONTACT
+						ДОДАТИ КОНТАКТ
 					</ButtonSubmit>
 				</FormStyled>
 			)}
