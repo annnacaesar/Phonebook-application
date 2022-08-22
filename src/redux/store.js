@@ -1,29 +1,48 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
 // import contactsReducer from './contacs/contactsReducer';
 import { contactsApi } from './contacs/contactsSlice';
 import { contactsReducer } from './contactSlice';
+import authReducer from './auth/authSlice';
+// import persistStore from 'redux-persist/lib/persistStore';
+import {
+	persistStore,
+	FLUSH,
+	REHYDRATE,
+	PAUSE,
+	PERSIST,
+	PURGE,
+	REGISTER,
+} from 'redux-persist';
+
+const middleware = [
+	...getDefaultMiddleware({
+		serializableCheck: {
+			ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+		},
+	}),
+];
+
+const authPersistConfig = {
+	key: 'auth',
+	storage,
+	whitelist: ['token'],
+};
 
 export const store = configureStore({
 	reducer: {
+		auth: persistReducer(authPersistConfig, authReducer),
 		contacts: contactsReducer,
 		[contactsApi.reducerPath]: contactsApi.reducer,
 	},
-	middleware: getDefaultMiddleware =>
-		getDefaultMiddleware().concat(contactsApi.middleware),
+	middleware,
 });
+
+export const persistor = persistStore(store);
 
 // import { persistStore } from 'redux-persist';
 // import { contactSlice } from './contactSlice';
-// import {
-// 	persistStore,
-// 	FLUSH,
-// 	REHYDRATE,
-// 	PAUSE,
-// 	PERSIST,
-// 	PURGE,
-// 	REGISTER,
-// } from 'redux-persist';
-// import { dispatch } from 'jest-circus/build/state';
 
 // export const store = configureStore({
 // 	reducer: {
