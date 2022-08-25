@@ -88,7 +88,7 @@
 // 	name: 'contacts',
 // 	initialState: {
 // 		items: [],
-// 		filterWord: '',
+// 		filter: '',
 // 	},
 // 	reducers: {
 // 		addItem(state, action) {
@@ -100,7 +100,7 @@
 // 			);
 // 		},
 // 		filterItems(state, action) {
-// 			state.filterWord = action.payload;
+// 			state.filter = action.payload;
 // 		},
 // 	},
 // });

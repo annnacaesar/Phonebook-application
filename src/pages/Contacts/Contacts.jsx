@@ -16,6 +16,7 @@ import Filter from 'components/Filter';
 import ContactList from 'components/ContactList';
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsOperations, contactsSelectors } from 'redux/contacts';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
 
 // const initialState = [
 // 	{
@@ -41,7 +42,7 @@ const Contacts = () => {
 	// console.log(contacts);
 	// // const [contacts, setContacts] = useState([]);
 	// // const [contacts, setContacts] = useState(initialState);
-	// const [filterWord, setFilterWord] = useState('');
+	// const [filter, setfilter] = useState('');
 
 	// useEffect(() => {
 	// 	dispatch(contactsOperations.fetchContacts);
@@ -52,7 +53,7 @@ const Contacts = () => {
 	// // }, []);
 
 	// const isVisibleContacts = () => {
-	// 	const normalizeFilter = filterWord.toLowerCase();
+	// 	const normalizeFilter = filter.toLowerCase();
 
 	// 	if (contacts) {
 	// 		if (contacts.length !== 0) {
@@ -65,29 +66,27 @@ const Contacts = () => {
 	// };
 
 	// const changeFilter = event => {
-	// 	setFilterWord(event.currentTarget.value.toLowerCase());
+	// 	setfilter(event.currentTarget.value.toLowerCase());
 	// 	// isVisibleContacts();
 	// };
 
 	const dispatch = useDispatch();
+	const isLogIn = useSelector(getIsLoggedIn);
 	const isLoadingContacts = useSelector(contactsSelectors.getLoading);
 
 	// const [isModalOpen, setIsModalOpen] = useState(false);
 	// const toggleModal = () => setIsModalOpen(state => !state);
 
-	useEffect(() => {
-		function handleFetchContacts() {
-			dispatch(contactsOperations.fetchContacts());
-		}
-		handleFetchContacts();
-	}, [dispatch]);
 	// useEffect(() => {
-	// 	first
-
-	// 	return () => {
-	// 		second
+	// 	function handleFetchContacts() {
+	// 		dispatch(contactsOperations.fetchContacts());
 	// 	}
-	// }, [third])
+	// 	handleFetchContacts();
+	// }, [dispatch]);
+
+	useEffect(() => {
+		if (isLogIn) dispatch(contactsOperations.fetchContacts());
+	}, [dispatch, isLogIn]);
 
 	return (
 		<>
@@ -100,7 +99,7 @@ const Contacts = () => {
 				{/* {isFetching && <ThreeCircles color="var(--color-button)" />} */}
 				{/* {contacts.length !== 0 ? ( */}
 				{/* <> */}
-				{/* <Filter filter={filterWord} onChange={changeFilter} /> */}
+				{/* <Filter filter={filter} onChange={changeFilter} /> */}
 				{isLoadingContacts && <ThreeCircles />}
 				<Filter />
 				<ContactList />
