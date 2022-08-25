@@ -1,7 +1,6 @@
-import {
-	Formik,
-	// Form, Field, ErrorMessage
-} from 'formik';
+import { Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { logIn } from 'redux/auth/authOperation';
 import {
 	Input,
 	InputContainer,
@@ -16,8 +15,10 @@ const initialValues = {
 };
 
 const Login = () => {
+	const dispatch = useDispatch();
 	const handleSubmit = (values, { resetForm }) => {
-		// createContact(values);
+		const { email, password } = values;
+		dispatch(logIn({ email, password }));
 		resetForm();
 	};
 	return (

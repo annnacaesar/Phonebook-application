@@ -58,18 +58,18 @@ export const App = () => {
 // 		setFilter(event.currentTarget.value);
 // 	};
 
-// 	const isVisibleContacts = () => {
-// 		const normalizeFilter = filter.toLowerCase();
+// const isVisibleContacts = () => {
+// 	const normalizeFilter = filter.toLowerCase();
 
-// 		if (data) {
-// 			if (data.length !== 0) {
-// 				return data.filter(contact =>
-// 					contact.name.toLowerCase().includes(normalizeFilter)
-// 				);
-// 			}
+// 	if (data) {
+// 		if (data.length !== 0) {
+// 			return data.filter(contact =>
+// 				contact.name.toLowerCase().includes(normalizeFilter)
+// 			);
 // 		}
-// 		return;
-// 	};
+// 	}
+// 	return;
+// };
 
 // 	return (
 // 		<AppContainer>

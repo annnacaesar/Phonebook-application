@@ -6,17 +6,21 @@ import {
 	NavContainer,
 	AppContainer,
 	BodyContainer,
-	NavLinkStyled,
+	// NavLinkStyled,
 } from './AppBar.styled';
+import Navigation from 'components/Navigation';
+import { getIsLoggedIn } from 'redux/auth/authSelectors';
+import UserMenu from 'components/UserMenu';
+import AuthNav from 'components/AuthNav';
+import { useSelector } from 'react-redux';
 
 export const AppBar = () => {
+	const isLoggedIn = useSelector(getIsLoggedIn);
 	return (
 		<AppContainer>
 			<NavContainer>
-				<NavLinkStyled to="/">Головна</NavLinkStyled>
-				<NavLinkStyled to="/contacts">Контакти</NavLinkStyled>
-				<NavLinkStyled to="/register">Реєстрація</NavLinkStyled>
-				<NavLinkStyled to="/login">Увійти</NavLinkStyled>
+				<Navigation />
+				{isLoggedIn ? <UserMenu /> : <AuthNav />}
 			</NavContainer>
 			<BodyContainer>
 				<Suspense

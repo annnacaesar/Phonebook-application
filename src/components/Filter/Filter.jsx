@@ -3,8 +3,8 @@ import { PropTypes } from 'prop-types';
 
 const Filter = ({ filter, onChange }) => (
 	<LabelFilter>
-		<InputFilter type="text" value={filter} onChange={onChange} /> Find
-		contacts by name
+		<InputFilter type="text" value={filter} onChange={onChange} /> Знайти
+		контакт за ім'ям
 	</LabelFilter>
 );
 

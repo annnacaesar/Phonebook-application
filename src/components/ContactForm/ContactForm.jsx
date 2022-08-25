@@ -8,10 +8,14 @@ import {
 	Error,
 } from './ContactForm.styled';
 import { schema } from 'helpers/validation-yup';
-import {
-	useGetContactsQuery,
-	useCreateContactMutation,
-} from '../../redux/contacs/contactsSlice';
+// import {
+// 	useGetContactsQuery,
+// 	useCreateContactMutation,
+// } from '../../redux/contacs/contactsSlice';
+// import { fetchContactsApi } from 'services/api-contact';
+import { useDispatch, useSelector } from 'react-redux';
+import { contactsOperations } from 'redux/contacts';
+import { contactsSelectors } from 'redux/contacts';
 
 const initialValues = {
 	name: '',
@@ -19,16 +23,21 @@ const initialValues = {
 };
 
 const ContactForm = () => {
-	const [createContact, { isLoading }] = useCreateContactMutation();
-	const { data } = useGetContactsQuery();
+	// const [createContact, { isLoading }] = useCreateContactMutation();
+	// const { data } = useGetContactsQuery();
+	const dispatch = useDispatch();
+	const contacts = useSelector(contactsSelectors.getAllContacts);
+	// const { data } = fetchContactsApi();
 
 	const handleSubmit = (values, { resetForm }) => {
-		const findContact = data.find(contact =>
+		console.log(values);
+		const findContact = contacts.find(contact =>
 			contact.name.toLowerCase().includes(values.name.toLowerCase())
 		);
 		findContact
 			? toast.info(`${values.name} is already in contact`)
-			: createContact(values);
+			: dispatch(contactsOperations.addContact(values));
+		// : createContact(values);
 		resetForm();
 	};
 
@@ -54,9 +63,7 @@ const ContactForm = () => {
 						</label>
 					</InputContainer>
 
-					<ButtonSubmit type="submit" disabled={isLoading}>
-						ДОДАТИ КОНТАКТ
-					</ButtonSubmit>
+					<ButtonSubmit type="submit">ДОДАТИ КОНТАКТ</ButtonSubmit>
 				</FormStyled>
 			)}
 		</Formik>
