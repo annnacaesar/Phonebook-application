@@ -8,14 +8,13 @@ export const AppContainer = styled.div`
 	background-image: var(--background-gradient);
 `;
 export const NavContainer = styled.div`
-	padding: 20px;
 	border-bottom: var(--border);
 	display: flex;
 	justify-content: space-around;
 `;
 
 export const BodyContainer = styled.div`
-	padding: 20px;
+	/* padding: 10px; */
 	border-bottom: var(--border);
 	display: flex;
 	justify-content: center;

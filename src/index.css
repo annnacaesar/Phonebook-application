@@ -1,35 +1,35 @@
 @import-normalize; /* bring in normalize.css styles */
 
-:root{
---background-color: #FFFFF7;
---color: #444444;
---color-button: #1D628B;
---color-label:  #73B1D6;
---color-input: #4589B0;
---color-warning: #e90707;
+:root {
+	--background-color: #fffff7;
+	--color: #444444;
+	--color-button: #1d628b;
+	--color-label: #73b1d6;
+	--color-input: #4589b0;
+	--color-warning: #e90707;
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
 }
 
 h1,
@@ -40,44 +40,44 @@ h5,
 h6,
 p,
 ul {
-  margin: 0;
-  padding-left: 0;
+	margin: 0;
+	padding-left: 0;
 }
 
 ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 li {
-  list-style: none;
+	list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 button {
-  cursor: pointer;
-  font-family: inherit;
+	cursor: pointer;
+	font-family: inherit;
 }
 
 img {
-  display: block;
-  height: auto;
+	display: block;
+	height: auto;
 }
 
 a {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
 }
 
-a{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
