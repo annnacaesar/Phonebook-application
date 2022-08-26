@@ -40,7 +40,7 @@ export const App = () => {
 				draggable
 				pauseOnHover
 			/>
-			<Suspense fallback={<InfinitySpin />}>
+			<Suspense fallback={<InfinitySpin width="100" color="#132b13" />}>
 				<Routes>
 					<Route path="/" element={<AppBar />}>
 						<Route index element={<Home />} />

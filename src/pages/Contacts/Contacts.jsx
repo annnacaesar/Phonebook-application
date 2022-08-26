@@ -1,5 +1,5 @@
 import { Container } from './Contacts.styled';
-import { ThreeCircles } from 'react-loader-spinner';
+import { InfinitySpin } from 'react-loader-spinner';
 import ContactForm from 'components/ContactForm';
 import { useEffect } from 'react';
 import Filter from 'components/Filter';
@@ -23,7 +23,9 @@ const Contacts = () => {
 				<ContactForm />
 			</Container>
 			<Container>
-				{isLoadingContacts && <ThreeCircles />}
+				{isLoadingContacts && (
+					<InfinitySpin width="100" color="#132b13" />
+				)}
 				<Filter />
 				<ContactList />
 				{/* <NoContact>Ви ще не додали жодного контакту😬</NoContact> */}

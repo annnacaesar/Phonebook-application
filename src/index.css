@@ -2,10 +2,14 @@
 
 :root {
 	--background-color: #fffff7;
-	--color: #444444;
-	--color-button: #1d628b;
-	--color-label: #73b1d6;
-	--color-input: #4589b0;
+	/* --color: #444444; */
+	--color: #132b13;
+	/* --color-button: #1d628b; */
+	--color-button: #57754a;
+	/* --color-label: #73b1d6; */
+	--color-label: #62794e;
+	/* --color-input: #4589b0; */
+	--color-input: #7d7d7d57;
 	--color-warning: #e90707;
 }
 
@@ -80,4 +84,23 @@ a {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.remove-btn {
+	margin-right: 0.5rem;
+}
+
+.item-enter {
+	opacity: 0;
+}
+.item-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+.item-exit {
+	opacity: 1;
+}
+.item-exit-active {
+	opacity: 0;
+	transition: opacity 500ms ease-in;
 }

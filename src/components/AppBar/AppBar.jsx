@@ -23,7 +23,9 @@ export const AppBar = () => {
 				{isLoggedIn ? <UserMenu /> : <AuthNav />}
 			</NavContainer>
 			<BodyContainer>
-				<Suspense fallback={<InfinitySpin />}>
+				<Suspense
+					fallback={<InfinitySpin width="100" color="#132b13" />}
+				>
 					<Outlet />
 				</Suspense>
 			</BodyContainer>
