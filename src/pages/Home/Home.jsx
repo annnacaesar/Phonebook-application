@@ -1,2 +1,2 @@
-const Home = () => <p> Моя книга контактів</p>;
+const Home = () => <p> My contacts book</p>;
 export default Home;

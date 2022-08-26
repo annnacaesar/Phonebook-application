@@ -16,9 +16,9 @@ export const UserMenu = () => {
 	return (
 		<UserContainer>
 			<Avatar src={avatar} alt="" width="32" />
-			<Name>Ласкаво просимо, {name}</Name>
+			<Name>Welcome, {name}</Name>
 			<button type="button" onClick={() => dispatch(logOut())}>
-				Вийти
+				Log Out
 			</button>
 		</UserContainer>
 	);

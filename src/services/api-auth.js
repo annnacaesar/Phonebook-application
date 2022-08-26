@@ -13,7 +13,7 @@ export const token = {
 
 export const fetchSignUp = async userData => {
 	console.log(userData);
-	const { data } = axios.post('/users/signup', userData);
+	const data = axios.post('/users/signup', userData);
 	console.log(data);
 	return data;
 };

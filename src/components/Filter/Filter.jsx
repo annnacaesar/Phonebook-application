@@ -18,7 +18,7 @@ const Filter = () => {
 				value={value}
 				onChange={handleChangeFilter}
 			/>
-			Знайти контакт за ім'ям
+			Find contact by name
 		</LabelFilter>
 	);
 };

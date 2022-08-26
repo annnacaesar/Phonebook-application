@@ -1,52 +1,191 @@
-import { Formik } from 'formik';
+// import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/authOperation';
-import {
-	Input,
-	InputContainer,
-	ButtonSubmit,
-	FormStyled,
-	Error,
-} from './Login.styled';
+// import {
+// 	Input,
+// 	InputContainer,
+// 	ButtonSubmit,
+// 	FormStyled,
+// 	Error,
+// } from './Login.styled';
 
-const initialValues = {
-	email: '',
-	password: '',
-};
+// const initialValues = {
+// 	email: '',
+// 	password: '',
+// };
 
-const Login = () => {
-	const dispatch = useDispatch();
-	const handleSubmit = (values, { resetForm }) => {
-		const { email, password } = values;
-		dispatch(logIn({ email, password }));
-		resetForm();
-	};
+// const Login = () => {
+// 	const dispatch = useDispatch();
+// 	const handleSubmit = (values, { resetForm }) => {
+// 		const { email, password } = values;
+// 		dispatch(logIn({ email, password }));
+// 		resetForm();
+// 	};
+// 	return (
+// 		<Formik
+// 			initialValues={initialValues}
+// 			onSubmit={handleSubmit}
+// 			// validationSchema={schema}
+// 		>
+// 			{({ errors, touched, isValidating }) => (
+// 				<FormStyled>
+// 					<InputContainer>
+// 						<label>
+// 							<Input type="email" name="email" />
+// 							Електронна адреса
+// 							<Error component="div" name="email" />
+// 						</label>
+
+// 						<label>
+// 							<Input type="password" name="password" />
+// 							Пароль
+// 							<Error component="div" name="password" />
+// 						</label>
+// 					</InputContainer>
+
+// 					<ButtonSubmit type="submit">УВІЙТИ</ButtonSubmit>
+// 				</FormStyled>
+// 			)}
+// 		</Formik>
+// 	);
+// };
+// export default Login;
+
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+// import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+function Copyright(props) {
 	return (
-		<Formik
-			initialValues={initialValues}
-			onSubmit={handleSubmit}
-			// validationSchema={schema}
+		<Typography
+			variant="body2"
+			color="text.secondary"
+			align="center"
+			{...props}
 		>
-			{({ errors, touched, isValidating }) => (
-				<FormStyled>
-					<InputContainer>
-						<label>
-							<Input type="email" name="email" />
-							Електронна адреса
-							<Error component="div" name="email" />
-						</label>
-
-						<label>
-							<Input type="password" name="password" />
-							Пароль
-							<Error component="div" name="password" />
-						</label>
-					</InputContainer>
-
-					<ButtonSubmit type="submit">УВІЙТИ</ButtonSubmit>
-				</FormStyled>
-			)}
-		</Formik>
+			{'Copyright © '}
+			<Link
+				color="inherit"
+				href="https://www.linkedin.com/in/anna-tsisar"
+				target="_blank"
+			>
+				Anna Tsisar
+			</Link>{' '}
+			{new Date().getFullYear()}
+			{'.'}
+		</Typography>
 	);
-};
-export default Login;
+}
+
+const theme = createTheme();
+
+export default function SignIn() {
+	const dispatch = useDispatch();
+	// 	const handleSubmit = (values, { resetForm }) => {
+	// 		const { email, password } = values;
+	// 		dispatch(logIn({ email, password }));
+	// 		resetForm();
+	// 	};
+	const handleSubmit = event => {
+		event.preventDefault();
+		const data = new FormData(event.currentTarget);
+		console.log({
+			email: data.get('email'),
+			password: data.get('password'),
+		});
+		dispatch(
+			logIn({
+				email: data.get('email'),
+				password: data.get('password'),
+			})
+		);
+	};
+
+	return (
+		<ThemeProvider theme={theme}>
+			<Container component="main" maxWidth="xs">
+				<CssBaseline />
+				<Box
+					sx={{
+						marginTop: 8,
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'center',
+					}}
+				>
+					<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+						<LockOutlinedIcon />
+					</Avatar>
+					<Typography component="h1" variant="h5">
+						Sign in
+					</Typography>
+					<Box
+						component="form"
+						onSubmit={handleSubmit}
+						noValidate
+						sx={{ mt: 1 }}
+					>
+						<TextField
+							margin="normal"
+							required
+							fullWidth
+							id="email"
+							label="Email Address"
+							name="email"
+							autoComplete="email"
+							autoFocus
+						/>
+						<TextField
+							margin="normal"
+							required
+							fullWidth
+							name="password"
+							label="Password"
+							type="password"
+							id="password"
+							autoComplete="current-password"
+						/>
+						{/* <FormControlLabel
+							control={
+								<Checkbox value="remember" color="primary" />
+							}
+							label="Remember me"
+						/> */}
+						<Button
+							type="submit"
+							fullWidth
+							variant="contained"
+							sx={{ mt: 3, mb: 2 }}
+						>
+							Sign In
+						</Button>
+						{/* <Grid container>
+							<Grid item xs>
+								<Link href="#" variant="body2">
+									Forgot password?
+								</Link>
+							</Grid>
+							<Grid item>
+								<Link href="#" variant="body2">
+									{"Don't have an account? Sign Up"}
+								</Link>
+							</Grid>
+						</Grid> */}
+					</Box>
+				</Box>
+				<Copyright sx={{ mt: 8, mb: 4 }} />
+			</Container>
+		</ThemeProvider>
+	);
+}

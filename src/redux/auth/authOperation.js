@@ -10,7 +10,7 @@ import {
 export const register = createAsyncThunk('auth/register', async credentials => {
 	console.log(credentials);
 	try {
-		const data = await fetchSignUp(credentials);
+		const { data } = await fetchSignUp(credentials);
 		console.log(data);
 		token.set(data.token);
 		return data;
