@@ -1,4 +1,4 @@
-import { Container } from './Contacts.styled';
+import { Container, ContainerStyled } from './Contacts.styled';
 import { InfinitySpin } from 'react-loader-spinner';
 import ContactForm from 'components/ContactForm';
 import { useEffect } from 'react';
@@ -18,7 +18,7 @@ const Contacts = () => {
 	}, [dispatch, isLogIn]);
 
 	return (
-		<>
+		<ContainerStyled>
 			<Container>
 				<ContactForm />
 			</Container>
@@ -30,7 +30,7 @@ const Contacts = () => {
 				<ContactList />
 				{/* <NoContact>Ви ще не додали жодного контакту😬</NoContact> */}
 			</Container>
-		</>
+		</ContainerStyled>
 	);
 };
 export default Contacts;

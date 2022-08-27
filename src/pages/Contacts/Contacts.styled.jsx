@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import img from '../../images/brando-makes-branding-PjhOkwN0ruY-unsplash.jpg';
+// import img from '../../images/brando-makes-branding-PjhOkwN0ruY-unsplash.jpg';
+import img from '../../images/book.jpg';
 // import img from '../../images/mediamodifier-OhVnADTC7rY-unsplash.jpg';
 // import img from '../../images/rhema-kallianpur-2W3bDp7K1oQ-unsplash.jpg';
 
@@ -12,13 +13,17 @@ import img from '../../images/brando-makes-branding-PjhOkwN0ruY-unsplash.jpg';
 // 	font-size: 40px;
 // 	color: var(--color);
 // `;
-// export const ContainerContacts = styled.div`
-// /*  */
-// 	display: flex;
-// 	background-image: url(${img});
-// 	background-repeat: no-repeat;
-// 	background-size: 100%;
-// `;
+export const ContainerStyled = styled.div`
+	/*  */
+	
+	width: 100%;
+	height:90vh;
+	display: flex;
+	justify-content: center;
+	background-image: url(${img});
+	background-repeat: no-repeat;
+	background-size: 100%;
+`;
 
 export const Container = styled.div`
 	display: flex;

@@ -5,16 +5,7 @@ export const UserContainer = styled.div`
 	display: flex;
 	/* flex-direction: column-reverse; */
 	align-items: center;
-`;
-
-export const NameContainer = styled.div`
-	display: flex;
-	/* flex-direction: column-reverse; */
-`;
-
-export const Avatar = styled.img`
-	margin-right: 5px;
-	border-radius: 50%;
+	margin-right: 20px;
 `;
 
 export const Name = styled.span`
