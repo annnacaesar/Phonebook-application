@@ -17,7 +17,7 @@ export const schema = () =>
 			.string()
 			.matches(
 				phoneRegExp,
-				'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+				'Phone number must be digits and can contain spaces, dashes, parentheses and can start without +'
 			)
 			.required(),
 	});
