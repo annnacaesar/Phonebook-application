@@ -3,9 +3,9 @@ import {
 	TitleFirst,
 	TitleLast,
 	ContainerHome,
-	AnimationDiv,
+	// AnimationDiv,
 } from './Home.styled';
-import { fadeInLeft } from 'react-animations';
+// import { fadeInLeft } from 'react-animations';
 
 const Home = () => (
 	<ContainerHome>

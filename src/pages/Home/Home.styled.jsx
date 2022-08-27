@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import img from '../../images/background-image.jpg';
 
 export const ContainerHome = styled.div`

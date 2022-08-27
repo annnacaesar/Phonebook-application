@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 // import img from '../../images/brando-makes-branding-PjhOkwN0ruY-unsplash.jpg';
 // import img from '../../images/mediamodifier-OhVnADTC7rY-unsplash.jpg';
-import img from '../../images/rhema-kallianpur-2W3bDp7K1oQ-unsplash.jpg';
+// import img from '../../images/rhema-kallianpur-2W3bDp7K1oQ-unsplash.jpg';
 
 export const AppContainer = styled.div`
 	margin: 0 auto;
