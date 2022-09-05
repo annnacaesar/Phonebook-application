@@ -14,5 +14,4 @@ export const addContactApi = async contact => {
 
 export const deleteContactsApi = async contactId => {
 	await axios.delete(`/contacts/${contactId}`);
-	// return data;
 };

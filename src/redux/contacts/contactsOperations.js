@@ -1,5 +1,3 @@
-// import axios from 'axios';
-// import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import { deleteContactsApi } from 'services/api-contact';
 import { addContactApi } from 'services/api-contact';
@@ -19,32 +17,6 @@ import {
 	fetchContactsError,
 } from './contactsActions';
 
-// export const fetchContacts = createAsyncThunk('/contacts', async () => {
-// 	try {
-// 		const contacts = await fetchContactsApi();
-// 		return contacts;
-// 	} catch (error) {
-// 		console.log(error.message);
-// 	}
-// });
-
-// export const addContact = createAsyncThunk('/contacts', async contact => {
-// 	try {
-// 		const contacts = await addContactApi(contact);
-// 		return contacts;
-// 	} catch (error) {
-// 		console.log(error.message);
-// 	}
-// });
-
-// export const deleteContact = createAsyncThunk('/contacts', async contactId => {
-// 	try {
-// 		const contacts = await deleteContactsApi(contactId);
-// 		return contacts;
-// 	} catch (error) {
-// 		console.log(error.message);
-// 	}
-// });
 const fetchContacts = () => async dispatch => {
 	dispatch(fetchContactsRequest());
 
@@ -64,7 +36,6 @@ const addContact = contact => async dispatch => {
 		dispatch(addContactSuccess(contacts));
 	} catch (error) {
 		dispatch(addContactError(error.message));
-		// console.log(error.response.data.message);
 		toast(`Будь ласка авторизуйтесь`);
 	}
 };
@@ -78,13 +49,9 @@ const deleteContact = contactId => async dispatch => {
 	} catch (error) {
 		dispatch(deleteContactError(error.message));
 	}
-	// axios
-	// 	.delete(`/contacts/${contactId}`)
-	// 	.then(() => dispatch(deleteContactSuccess(contactId)))
-	// 	.catch(error => dispatch(deleteContactError(error.message)));
 };
 
-// PATCH @ /tasks/:id
+
 // const toggleCompleted =
 // 	({ id, completed }) =>
 // 	dispatch => {

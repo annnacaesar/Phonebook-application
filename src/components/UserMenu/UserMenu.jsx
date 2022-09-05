@@ -8,7 +8,6 @@ import { TbLogout } from 'react-icons/tb';
 export const UserMenu = () => {
 	const dispatch = useDispatch();
 	const name = useSelector(getUserName);
-	console.log(name);
 
 	return (
 		<UserContainer>

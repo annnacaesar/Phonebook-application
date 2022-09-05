@@ -1,13 +1,7 @@
-// import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router';
 import { Suspense } from 'react';
 import { InfinitySpin } from 'react-loader-spinner';
-import {
-	NavContainer,
-	AppContainer,
-	BodyContainer,
-	// NavLinkStyled,
-} from './AppBar.styled';
+import { NavContainer, AppContainer, BodyContainer } from './AppBar.styled';
 import Navigation from 'components/Navigation';
 import { getIsLoggedIn } from 'redux/auth/authSelectors';
 import UserMenu from 'components/UserMenu';

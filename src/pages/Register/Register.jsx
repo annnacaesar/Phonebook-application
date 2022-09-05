@@ -3,9 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-// import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,38 +12,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authOperation';
 
-function Copyright(props) {
-	return (
-		<Typography
-			variant="body2"
-			color="text.secondary"
-			align="center"
-			{...props}
-		>
-			{'Copyright © '}
-			<Link
-				color="inherit"
-				href="https://www.linkedin.com/in/anna-tsisar"
-				target="_blank"
-			>
-				Anna Tsisar
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
-		</Typography>
-	);
-}
-
 const theme = createTheme();
 
-export default function SignUp() {
+const SignUp = () => {
 	const dispatch = useDispatch();
-	// 	const handleSubmit = (values, { resetForm }) => {
-	// 		const { name, email, password } = values;
-	// 		dispatch(register({ name, email, password }));
-	// 		// createContact(values);
-	// 		resetForm();
-	// 	};
+
 	const handleSubmit = event => {
 		event.preventDefault();
 		const data = new FormData(event.currentTarget);
@@ -100,16 +70,6 @@ export default function SignUp() {
 									autoFocus
 								/>
 							</Grid>
-							{/* <Grid item xs={12} sm={6}>
-								<TextField
-									required
-									fullWidth
-									id="lastName"
-									label="Last Name"
-									name="lastName"
-									autoComplete="family-name"
-								/>
-							</Grid> */}
 							<Grid item xs={12}>
 								<TextField
 									required
@@ -131,17 +91,6 @@ export default function SignUp() {
 									autoComplete="new-password"
 								/>
 							</Grid>
-							{/* <Grid item xs={12}>
-								<FormControlLabel
-									control={
-										<Checkbox
-											value="allowExtraEmails"
-											color="primary"
-										/>
-									}
-									label="I want to receive inspiration, marketing promotions and updates via email."
-								/>
-							</Grid> */}
 						</Grid>
 						<Button
 							type="submit"
@@ -151,81 +100,11 @@ export default function SignUp() {
 						>
 							Sign Up
 						</Button>
-						{/* <Grid container justifyContent="flex-end">
-							<Grid item>
-								<Link href="#" variant="body2">
-									Already have an account? Sign in
-								</Link>
-							</Grid>
-						</Grid> */}
 					</Box>
 				</Box>
-				<Copyright sx={{ mt: 5 }} />
 			</Container>
 		</ThemeProvider>
 	);
 }
 
-// import {
-// 	Formik,
-// 	// Form, Field, ErrorMessage
-// } from 'formik';
-// import { useDispatch } from 'react-redux';
-// import { register } from 'redux/auth/authOperation';
-// import {
-// 	Input,
-// 	InputContainer,
-// 	ButtonSubmit,
-// 	FormStyled,
-// 	Error,
-// } from './Register.styled';
-
-// const initialValues = {
-// 	name: '',
-// 	email: '',
-// 	password: '',
-// };
-
-// const Register = () => {
-// 	const dispatch = useDispatch();
-// 	const handleSubmit = (values, { resetForm }) => {
-// 		const { name, email, password } = values;
-// 		dispatch(register({ name, email, password }));
-// 		// createContact(values);
-// 		resetForm();
-// 	};
-// 	return (
-// 		<Formik
-// 			initialValues={initialValues}
-// 			onSubmit={handleSubmit}
-// 			// validationSchema={schema}
-// 		>
-// 			{({ errors, touched, isValidating }) => (
-// 				<FormStyled>
-// 					<InputContainer>
-// 						<label>
-// 							<Input type="name" name="name" />
-// 							Ім'я
-// 							<Error component="div" name="name" />
-// 						</label>
-
-// 						<label>
-// 							<Input type="email" name="email" />
-// 							Електронна адреса
-// 							<Error component="div" name="email" />
-// 						</label>
-
-// 						<label>
-// 							<Input type="password" name="password" />
-// 							Пароль
-// 							<Error component="div" name="password" />
-// 						</label>
-// 					</InputContainer>
-
-// 					<ButtonSubmit type="submit">ЗАРЕЄСТРУВАТИСЬ</ButtonSubmit>
-// 				</FormStyled>
-// 			)}
-// 		</Formik>
-// 	);
-// };
-// export default Register;
+export default SignUp;

@@ -2,25 +2,23 @@ import { useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch
+} from 'react-redux';
 import { fetchCurrentUser } from 'redux/auth/authOperation';
-import { getIsLoggedIn } from 'redux/auth/authSelectors';
 import { Suspense } from 'react';
 import { InfinitySpin } from 'react-loader-spinner';
-
 import { lazy } from 'react';
 import PrivateRoute from 'components/PrivateRoute';
 import PublicRoute from 'components/PublicRoute';
-const AppBar = lazy(() => import('components/AppBar/AppBar'));
-const Home = lazy(() => import('pages/Home/Home.jsx'));
-const Contacts = lazy(() => import('pages/Contacts/Contacts.jsx'));
-const Login = lazy(() => import('pages/Login/Login.jsx'));
-const Register = lazy(() => import('pages/Register/Register.jsx'));
+
+const AppBar = lazy(() => import('components/AppBar'));
+const Home = lazy(() => import('pages/Home'));
+const Contacts = lazy(() => import('pages/Contacts'));
+const Login = lazy(() => import('pages/Login'));
+const Register = lazy(() => import('pages/Register'));
 
 export const App = () => {
 	const dispatch = useDispatch();
-	const isLoggedIn = useSelector(getIsLoggedIn);
-	console.log(isLoggedIn);
 
 	useEffect(() => {
 		dispatch(fetchCurrentUser());
@@ -58,16 +56,6 @@ export const App = () => {
 						<Route element={<PrivateRoute redirectPath="/" />}>
 							<Route path="/contacts" element={<Contacts />} />
 						</Route>
-						{/* <Route
-							path="/contacts"
-							element={
-								isLoggedIn ? (
-									<Contacts />
-								) : (
-									<Navigate to="/login" replace />
-								)
-							}
-						/> */}
 					</Route>
 				</Routes>
 			</Suspense>

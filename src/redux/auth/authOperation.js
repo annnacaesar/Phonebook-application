@@ -5,34 +5,23 @@ import {
 	fetchLogOut,
 	fetchSignUp,
 	token,
-} from '../../services/api-auth';
+} from 'services/api-auth';
 
 export const register = createAsyncThunk('auth/register', async credentials => {
 	console.log(credentials);
 	try {
 		const { data } = await fetchSignUp(credentials);
-		console.log(data);
 		token.set(data.token);
 		return data;
 	} catch (error) {
 		console.log(error.message);
 	}
 });
-// export const register = createAsyncThunk('auth/register', async credentials => {
-// 	try {
-// 		const { data } = await axios.post('/users/signup', credentials);
-// 		token.set(data.token);
-// 		return data;
-// 	} catch (error) {
-// 		// TODO: Добавить обработку ошибки error.message
-// 	}
-// });
 
 export const logIn = createAsyncThunk('auth/login', async credentials => {
 	try {
 		console.log(credentials);
 		const data = await fetchLogIn(credentials);
-		console.log(data);
 		token.set(data.token);
 		return data;
 	} catch (error) {
@@ -42,7 +31,6 @@ export const logIn = createAsyncThunk('auth/login', async credentials => {
 export const logOut = createAsyncThunk('auth/logout', async () => {
 	try {
 		const data = await fetchLogOut();
-		console.log(data);
 		token.unset();
 		return data;
 	} catch (error) {

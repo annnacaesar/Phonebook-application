@@ -1,5 +1,4 @@
 import { InputFilter, LabelFilter } from './Filter.styled';
-import { PropTypes } from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFilter, contactsSelectors } from 'redux/contacts';
 
@@ -23,9 +22,5 @@ const Filter = () => {
 	);
 };
 
-Filter.propTypes = {
-	filter: PropTypes.string,
-	onChange: PropTypes.func,
-};
 
 export default Filter;

@@ -12,7 +12,6 @@ export const ContainerHome = styled.div`
 
 export const Title = styled.h1`
 	position: absolute;
-	/* top: 240px; */
 	right: 20px;
 	top: 50%;                         
   transform: translate(0, -50%) }

@@ -28,7 +28,6 @@ const Contacts = () => {
 				)}
 				<Filter />
 				<ContactList />
-				{/* <NoContact>Ви ще не додали жодного контакту😬</NoContact> */}
 			</Container>
 		</ContainerStyled>
 	);
