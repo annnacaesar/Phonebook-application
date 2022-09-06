@@ -2,21 +2,46 @@ import styled from 'styled-components';
 import img from '../../images/background-image.jpg';
 
 export const ContainerHome = styled.div`
-	position: relative;
 	width: 100%;
-	height: 90vh;
+	height: 100vh;
 	background-image: url(${img});
 	background-repeat: no-repeat;
-	background-size: 75%;
+	background-size: cover;
+	@media screen and (max-width: 1199px) {
+		background-position: center;
+	}
+	@media screen and (min-width: 1200px) {
+		background-image: url(${img});
+		background-repeat: no-repeat;
+		background-size: 75%;
+	}
 `;
 
 export const Title = styled.h1`
-	position: absolute;
-	right: 20px;
-	top: 50%;                         
-  transform: translate(0, -50%) }
+	margin-top: 7%;
+	margin-left: 55%;
 	font-family: 'DynaPuff', cursive;
-	font-size: 90px;
+
+	@media screen and (min-width: 320px) {
+		margin-top: 70%;
+		margin-left: 40%;
+		font-size: 32px;
+	}
+	@media screen and (min-width: 400px) {
+		margin-top: 60%;
+		margin-left: 40%;
+		font-size: 48px;
+	}
+	@media screen and (min-width: 768px) {
+		margin-top: 20%;
+		margin-left: 50%;
+		font-size: 68px;
+	}
+	@media screen and (min-width: 1200px) {
+		margin-top: 7%;
+		margin-left: 55%;
+		font-size: 90px;
+	}
 `;
 
 export const TitleFirst = styled.span`
