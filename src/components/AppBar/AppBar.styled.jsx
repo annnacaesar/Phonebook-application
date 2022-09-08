@@ -25,26 +25,26 @@ export const BodyContainer = styled.div`
 export const NavLinkStyled = styled(NavLink)`
 	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
 	font-size: 1.5rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.3rem;
-    color: #0D0C1D;
-    text-decoration: none;
-    transition: color 0.3s linear;
+	text-transform: uppercase;
+	padding: 2rem 0;
+	font-weight: bold;
+	letter-spacing: 0.3rem;
+	color: #0d0c1d;
+	text-decoration: none;
+	transition: color 0.3s linear;
 
-    @media (max-width: 576px) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
+	@media (max-width: 576px) {
+		font-size: 1.5rem;
+		text-align: center;
+	}
 
-    &:hover {
-      color: var(--color-button);
-    }
-		&.active {
+	&:hover {
 		color: var(--color-button);
 	}
-	@media (min-width: 769px) {
+	&.active {
+		color: var(--color-button);
+	}
+	@media (min-width: 768px) {
 		margin-right: 30px;
 	}
 `;

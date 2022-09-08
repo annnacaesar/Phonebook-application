@@ -21,17 +21,16 @@ export const ContainerStyled = styled.div`
 `;
 
 export const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 0;
 	@media (min-width: 1200px) {
 		width: 560px;
 		&:not(:last-child) {
 			margin-right: 20px;
 		}
 	}
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 10px 0;
 `;
 
 export const TitleMain = styled.h1`

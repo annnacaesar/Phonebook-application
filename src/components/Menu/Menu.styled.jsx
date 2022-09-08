@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
+	@media (max-width: 576px) {
+		width: 100%;
+	}
+
 	@media (max-width: 1199px) {
 		display: flex;
 		flex-direction: column;
@@ -16,10 +20,6 @@ export const StyledMenu = styled.nav`
 		left: 0;
 		transition: transform 0.3s ease-in-out;
 		z-index: 9;
-	}
-
-	@media (max-width: 576px) {
-		width: 100%;
 	}
 
 	@media (min-width: 1200px) {

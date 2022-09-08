@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const InputFilter = styled.input`
-width: 100%;
+	width: 100%;
 	background-color: var(--color-input);
 	height: 40px;
 	margin: 0;
@@ -14,13 +14,14 @@ width: 100%;
 `;
 
 export const LabelFilter = styled.label`
-	width: 100%;
 	@media (max-width: 1199px) {
 		margin: 25px 0;
 	}
 	@media (min-width: 1200px) {
 		margin-bottom: 15px;
 	}
+
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	font-size: 22px;
