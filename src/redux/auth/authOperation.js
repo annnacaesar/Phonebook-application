@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import {
 	fetchLogIn,
 	fetchLogOut,
@@ -8,24 +9,23 @@ import {
 } from 'services/api-auth';
 
 export const register = createAsyncThunk('auth/register', async credentials => {
-	console.log(credentials);
 	try {
 		const { data } = await fetchSignUp(credentials);
 		token.set(data.token);
 		return data;
 	} catch (error) {
-		console.log(error.message);
+		toast.info(`User with this email address is already registered`)
 	}
 });
 
 export const logIn = createAsyncThunk('auth/login', async credentials => {
 	try {
-		console.log(credentials);
+
 		const data = await fetchLogIn(credentials);
 		token.set(data.token);
 		return data;
 	} catch (error) {
-		console.log(error.message);
+		toast.info(`Incorrect login or password`)
 	}
 });
 export const logOut = createAsyncThunk('auth/logout', async () => {

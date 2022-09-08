@@ -22,7 +22,6 @@ const ContactForm = () => {
 	const contacts = useSelector(contactsSelectors.getAllContacts);
 
 	const handleSubmit = (values, { resetForm }) => {
-		console.log(values);
 		const findContact = contacts.find(contact =>
 			contact.name.toLowerCase().includes(values.name.toLowerCase())
 		);
