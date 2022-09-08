@@ -1,9 +1,20 @@
 import styled from 'styled-components';
 
 export const UserContainer = styled.div`
+	width: 100%;
 	display: flex;
-	align-items: center;
-	margin-right: 20px;
+
+	@media (max-width: 1199px) {
+		padding: 2rem 0;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (min-width: 1200px) {
+		flex-direction: row;
+		align-items: center;
+		/* margin-right: 20px; */
+	}
 `;
 
 export const Name = styled.span`

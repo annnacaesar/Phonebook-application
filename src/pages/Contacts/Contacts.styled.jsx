@@ -3,22 +3,35 @@ import img from '../../images/book.jpg';
 
 export const ContainerStyled = styled.div`
 	width: 100%;
-	height: 90vh;
-	display: flex;
-	justify-content: center;
 	background-image: url(${img});
-	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: cover;
+	@media (max-width: 1199px) {
+		display: flex;
+		flex-direction: column;
+		padding: 50px 30px;
+	}
+	@media (min-width: 1200px) {
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
 `;
 
 export const Container = styled.div`
+	@media (min-width: 1200px) {
+		width: 560px;
+		&:not(:last-child) {
+			margin-right: 20px;
+		}
+	}
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 440px;
-	&:not(:last-child) {
-		margin-right: 5px;
-	}
+	padding: 10px 0;
 `;
 
 export const TitleMain = styled.h1`

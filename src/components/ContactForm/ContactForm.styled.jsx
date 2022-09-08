@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormStyled = styled(Form)`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -10,11 +11,14 @@ export const FormStyled = styled(Form)`
 
 export const InputContainer = styled.div`
 	width: 100%;
-	margin: 0;
-	padding: 0;
-	margin: 10px 0 10px 0;
 	display: flex;
-	justify-content: center;
+	@media (max-width: 1199px) {
+		flex-direction: column;
+	}
+	@media (min-width: 1200px) {
+		padding: 0;
+		justify-content: center;
+	}
 
 	& label {
 		display: flex;
@@ -23,8 +27,10 @@ export const InputContainer = styled.div`
 		color: var(--color-label);
 		margin-bottom: 15px;
 
-		&:not(:last-child) {
-			margin-right: 10px;
+		@media (min-width: 1200px) {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
 		}
 	}
 `;
@@ -35,8 +41,14 @@ export const Error = styled(ErrorMessage)`
 `;
 
 export const Input = styled(Field)`
+	@media (max-width: 1199px) {
+		width: 100%;
+	}
+	@media (min-width: 1200px) {
+		width: 275px;
+	}
+
 	background-color: var(--color-input);
-	width: 200px;
 	height: 40px;
 	margin: 0;
 	padding: 0 15px 0 15px;
@@ -44,6 +56,9 @@ export const Input = styled(Field)`
 `;
 
 export const ButtonSubmit = styled.button`
+	@media (max-width: 1199px) {
+		width: 100%;
+	}
 	width: 200px;
 	height: 40px;
 	border-radius: 5px;

@@ -13,6 +13,7 @@ export const NavContainer = styled.div`
 	display: flex;
 	justify-content: end;
 	border-bottom: 1px solid #eeecec;
+	padding: 0 30px;
 `;
 
 export const BodyContainer = styled.div`
@@ -22,13 +23,28 @@ export const BodyContainer = styled.div`
 `;
 
 export const NavLinkStyled = styled(NavLink)`
-	margin-right: 20px;
 	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-	font-weight: 400;
-	font-size: 1.3rem;
-	line-height: 1.334;
-	letter-spacing: 0em;
-	&.active {
+	font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    color: #0D0C1D;
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+    @media (max-width: 576px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    &:hover {
+      color: var(--color-button);
+    }
+		&.active {
 		color: var(--color-button);
+	}
+	@media (min-width: 769px) {
+		margin-right: 30px;
 	}
 `;
