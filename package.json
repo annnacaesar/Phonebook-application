@@ -2,7 +2,7 @@
   "name": "phonebook-application_adaptive",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://annnacaesar.github.io/Phonebook-application_adaptive/",
+  "homepage": "https://annnacaesar.github.io/phonebook-application_adaptive/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
